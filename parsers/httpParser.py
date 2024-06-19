@@ -31,7 +31,7 @@ def parseHTTPRequest(body: str):
     try:
         parsed["type"] = startSplit[0]
         parsed["requested"] = startSplit[1]
-        parsed["home"] = startSplit[2]
+        parsed["version"] = startSplit[2]
     except:
         pass
     return parsed
