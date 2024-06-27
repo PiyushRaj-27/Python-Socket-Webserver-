@@ -2,12 +2,12 @@
 
 This is a simple Python webserver built using sockets and threading. The server handles HTTP requests, parses them, and serves HTML files along with their associated CSS resources. 
 
+**Note: This project is a bare minimum implementation of a simple Python webserver for educational purposes only. It is not suitable for production use. This project aims to help you understand the inner workings of an extremely simple webserver.**
 ## Table of Contents
 
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [File Structure](#file-structure)
 - [Contributing](#contributing)
 - [License](#license)
 
