@@ -1,8 +1,11 @@
 from .urlMapped import urls, DEFAULT_NOT_FOUND
 from parsers.htmlParser import htmlParser
 import os
-mappings = urls
-defaultNF = DEFAULT_NOT_FOUND
+
+
+
+MAPPINGS = urls
+DEFAULTNF = DEFAULT_NOT_FOUND
 
 def returnFiles(parsed: dict):
 
@@ -11,12 +14,12 @@ def returnFiles(parsed: dict):
     parent_dir = os.path.dirname(current_dir)
 
     # fallback resource path
-    defaultNFresourcePath = os.path.join(parent_dir, f"pages\{defaultNF}")
+    DEFAULTNFresourcePath = os.path.join(parent_dir, f"pages\{DEFAULTNF}")
 
     # not a valid request, send fallback
     if len(parsed) == 0:
         try:
-            with open(defaultNFresourcePath, "r") as f:
+            with open(DEFAULTNFresourcePath, "r") as f:
                 data = f.read()
                 return data
         except:
@@ -29,10 +32,10 @@ def returnFiles(parsed: dict):
         docLocation = ""
 
         # Find html page corresoponding to the url
-        if requestedResource in mappings:
-            docLocation = mappings[requestedResource]
+        if requestedResource in MAPPINGS:
+            docLocation = MAPPINGS[requestedResource]
         else:
-            docLocation = defaultNF
+            docLocation = DEFAULTNF
 
         resourcePath = os.path.join(parent_dir, f"pages\{docLocation}")
         try:
@@ -45,7 +48,7 @@ def returnFiles(parsed: dict):
             return ""
     except:
         try:
-            with open(defaultNFresourcePath, "r") as f:
+            with open(DEFAULTNFresourcePath, "r") as f:
                 data = f.read()
                 return data
         except:
