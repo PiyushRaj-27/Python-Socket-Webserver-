@@ -21,6 +21,7 @@ def returnFiles(parsed: dict):
         try:
             with open(DEFAULTNFresourcePath, "r") as f:
                 data = f.read()
+                data = htmlParser(data)
                 return data
         except:
             print(f"Could not open the file! {resourcePath}")
@@ -50,6 +51,7 @@ def returnFiles(parsed: dict):
         try:
             with open(DEFAULTNFresourcePath, "r") as f:
                 data = f.read()
+                data = htmlParser(data)
                 return data
         except:
             print(f"Could not open the file! {resourcePath}")
